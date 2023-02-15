@@ -1,3 +1,8 @@
 # devops-cortel
 
-BBBBBB
+AAAAAAA
+AAAAA
+AAAA
+AAA
+AA
+A
