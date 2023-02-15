@@ -1,8 +1,5 @@
 # devops-cortel
 
+## Результаты работ
 
-AAAAA
-AAAA
-AAA
-AA
-A
+1. [Введение в DevOps](https://github.com/VladimirKraft/devops-cortel/tree/main/01-intro-rez)
