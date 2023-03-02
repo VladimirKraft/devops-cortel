@@ -80,4 +80,7 @@
     <br/>
     ![S](img/7.jpg)
     <br/>
-
+    Или плюсом использовать --pretty=format:
+    <br/>
+    ![pretty](img/7.1.jpg)
+    
