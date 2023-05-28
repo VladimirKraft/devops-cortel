@@ -121,25 +121,22 @@ docker network create my_net
 
 ![create_net](./img/network_create.jpg)
 
-Далее были запущены два контейнера с ключом --net, который привязывает контейнер к сети:
-
-![run](./img/run_A1.jpg)
-
-![run](./img/run_A3.jpg)
-
-
-После запуска двух контейнеров можно узнать адрес каждого при помощи команды:
+Далее были запущены два контейнера командами:
 
 ```bash
-docker network inspect [название сети]
+    docker run -it -d --name A1 ubuntu_one sh;
+    docker run -it -d --name A2 ubuntu_one sh;
 ```
 
-![inspect](./img/3_net_inspect.jpg)
+После запуска контейнеров они были подключены к сети my_net при помощи команды:
 
+```bash 
+    docker network connect [имя_сети] [имя_контейнера]
+```
 
-Далее можно пингануть одну машину из другой, чтобы на 100% убедиться, что контейнеры находятся в одной сети:
+Далее при помощи команды `docker network inspect my_net` можно убедиться в том, что эти контейнеры в сети my_net:
 
-![ping](./img/ping_machine_node.jpg)
+![inspect](./img/net_inspect.jpg)
 
 
 
