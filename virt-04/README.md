@@ -66,7 +66,37 @@ RUN \
 
 ## Ответ
 
-Развернуть jenkins в контейнере docker можно при помощи команды:
+Dockerfile для базового образа ubuntu:
+
+```bash
+FROM ubuntu:latest
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get -y update \
+&& apt-get -y upgrade
+RUN apt-get -y install software-properties-common git gnupg sudo nano vim wget curl zip unzip build-essential libtool autoconf uuid-dev pkg-config libsodium-dev lynx-common tcl inetutils-pi>
+RUN apt-get clean
+RUN sudo apt search openjdk
+RUN apt-get -y install openjdk-11-jdk
+RUN curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+/usr/share/keyrings/jenkins-keyring.asc > /dev/null
+RUN sudo sh -c "echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+https://pkg.jenkins.io/debian binary/ | sudo tee \
+/etc/apt/sources.list.d/jenkins.list > /dev/null"
+RUN sudo apt-get update
+RUN sudo apt-get -y install jenkins
+RUN servise jenkins start
+EXPOSE 8080
+
+```
+
+Образ был собран командой `docker build -t ubuntu_ver2 .`
+
+Далее контейнер был запущен командой `docker run -it -p 32770:8080 --name ubuntu_jenkins2 ubuntu_ver2`. Но есть один нюанс, команда `RUN service jenkins start` не выполняется при `docker run`, но когда контейнер запущен открывается командная строка этого контейнера и в нее прописав `service jenkins start`  jenkins стартует в контейнере и мы можем это увидеть на картинке ниже.
+
+![ubuntu_jenkins](./img/ubuntu_jenkins.jpg)
+
+
+Так же развернуть jenkins в контейнере docker можно при помощи команды:
 
 ```bash
 docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 --restart=on-failure jenkins/jenkins:lts-jdk11
