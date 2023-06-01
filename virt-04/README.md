@@ -116,6 +116,25 @@ docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 --re
 ![setup_plugins](./img/2.2.jpg)
 
 
+Dockerfile для базового образа amazoncorreto:
+
+```bash
+
+FROM amazoncorretto
+
+RUN yum remove java -y
+RUN yum install java-11-openjdk-devel -y
+
+
+COPY jenkins.war /tmp/
+CMD java -jar /tmp/jenkins.war --enable-future-java
+
+
+```
+
+Далее все команды идентичны, как и для базового образа ubuntu.
+
+
 ## Задача 3 
 
 В данном задании вы научитесь:
