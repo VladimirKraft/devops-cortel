@@ -217,8 +217,5 @@
 
 ## Ссылки на содержимое файлов terraform
 
-[main.tf](./files_terraform/main.tf)
-[variables.tf](./files_terraform/variables.tf)
-[provider.tf](./files_terraform/provider.tf)
-[terraform.tfvars](./files_terraform/terraform.tfvars)
+[файлы terraform](./files_terraform/)
 
