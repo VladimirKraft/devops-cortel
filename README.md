@@ -31,3 +31,7 @@
 ## Облачная инфраструктура. Terraform
 1. [Инфраструктура как код - Результаты](./virt-05/)
 2. [Основы Terraform - Результаты](./terraform_basics/)
+
+
+## Kubernetes
+1. [Компоненты Kubernetes - Результаты](./1-kub-intro)
