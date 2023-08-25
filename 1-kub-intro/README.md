@@ -11,21 +11,23 @@
 - curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
     
 
-    `minikube version` 
-    ![minikube_version](./img/minikube_version.jpg)
-
-    Далее выполнил команду `minikube start --vm-driver=none`, но запуск не удался, т.к. требовался crictl
-    ![no_crictl](./img/no_crictl.jpg)
+`minikube version` 
     
-    Установил crictl воспользовавшись [подсказкой](https://github.com/kubernetes-sigs/cri-tools)
+![minikube_version](./img/minikube_version.jpg)
 
-    Далее для запуска minikube потребовалось установить cri-dockerd и для его установки я тоже воспользовался [подсказкой](https://github.com/Mirantis/cri-dockerd).
+Далее выполнил команду `minikube start --vm-driver=none`, но запуск не удался, т.к. требовался crictl
+    
+![no_crictl](./img/no_crictl.jpg)
+    
+Установил crictl воспользовавшись [подсказкой](https://github.com/kubernetes-sigs/cri-tools)
 
-    После чего снова попытался запустить minikube и на этот раз он потребовал установить CNI, на что minikube дал [подсказку](https://minikube.sigs.k8s.io/docs/faq/#how-do-i-install-containernetworking-plugins-for-none-driver) сам
+Далее для запуска minikube потребовалось установить cri-dockerd и для его установки я тоже воспользовался [подсказкой](https://github.com/Mirantis/cri-dockerd).
 
-    После этого minikube запустился успешно!
+ После чего снова попытался запустить minikube и на этот раз он потребовал установить CNI, на что minikube дал [подсказку](https://minikube.sigs.k8s.io/docs/faq/#how-do-i-install-containernetworking-plugins-for-none-driver) сам
 
-    ![minikube_start](./img/minikube_start.jpg)
+После этого minikube запустился успешно!
+
+![minikube_start](./img/minikube_start.jpg)
 
 
 ## Задача 2: Запуск Hello, World!
