@@ -75,5 +75,14 @@
 
 ![pf_vmware2](./img/port_forward_VMWARE2.jpg)
 
+## Что-то получилось исправить
+
+Все-таки получилось вытащить сервис наружу при помощи команды `kubectl port-forward 'название пода' --address 192.168.0.2 55533:8080` и конфигурации NAT в vmware
+
+![cfg_NAT](./img/cfg_NAT.jpg)
+
+![service_in_internet](./img/service_in_internet.jpg)
+
+
 
     
